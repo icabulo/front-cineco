@@ -1,0 +1,7 @@
+/* 
+//ejemplo de un mixin para opciones comunes de display:flex
+@mixin flexbox($display: flex, $jc: center, $al: center) {
+  display: $display;
+  justify-content: $jc;
+  align-items: $al;
+} */
