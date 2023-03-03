@@ -2,7 +2,7 @@
 
 - Se crean dos ramas para el repositorio:
   - main: rama para cargar producto final
-  - develo: rama para verificar implementaciones de desarrollo.
+  - develop: rama para verificar implementaciones de desarrollo.
 - Dependencias de desarrollo que se preinstalaron para el primer commit:
   - sass: npm i --save-dev sass.
   - prettier: npm i -D prettier
