@@ -1,5 +1,5 @@
-import './App.scss';
-import { CustomRouter } from './router';
+import "./App.scss"
+import { CustomRouter } from "./router"
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <h2>PLANTILLA BASE</h2> */}
       <CustomRouter />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

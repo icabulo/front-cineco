@@ -1,4 +1,4 @@
-import Home from './Home';
-import ErrorPage from './ErrorPage';
+import Home from "./Home"
+import ErrorPage from "./ErrorPage"
 
-export { Home, ErrorPage };
+export { Home, ErrorPage }
