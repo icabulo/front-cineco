@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.sidebar {
+  padding-top: 2em;
+  text-transform: uppercase;
+  background-color: #000;
+  font-family: "Roboto", sans-serif;
+  padding-left: 2rem;
+  max-width: 30vw;
+  height: 100vh;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+p {
+  color: white;
+  padding-block: 0.5em;
+  margin-left: 0.8em;
+  cursor: pointer;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 2px solid red; */
+  width: 100%;
+  text-align: center; /* se intentó centar el logo y el boton al tiempo pero la etiqueta <a> solo se pudo centrar con margin */
+  .return-icon {
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .return-icon:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.top-section a {
+  margin: 0 auto; /*  para centrar, por alguna razon no funciona text align:center */
+}
+
+.image-container {
+  width: 80%;
+  .cineco-image {
+    width: 60%;
+  }
+}
+
+.title {
+  width: 85%;
+  margin-block: 0.7em;
+}
+
+.title-cine {
+  background-color: #fbf067;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+}
+
+.title-alternativo {
+  background-color: #8ad000;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+}
+
+.title-comidas {
+  background-color: #facb65;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+}
+
+.title-otros {
+  background-color: #9acbfc;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clubcard-container {
+  /* 85% width to align it with the section tittle and to center the button properly */
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.clubcard-button {
+  background-color: #fbf067;
+  border-radius: 100px;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid #f3993b;
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+}
