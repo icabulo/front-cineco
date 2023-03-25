@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ErrorPage, Home } from "../pages"
+import InProgress from "../pages/InProgress"
 
 const routerconfig = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const routerconfig = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/construccion",
+    element: <InProgress />,
   },
 ])
 
