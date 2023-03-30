@@ -1,0 +1,189 @@
+@import "../../styles/variables.scss";
+
+.header {
+  width: 100vw;
+  background-color: $mainColor;
+}
+
+.header-top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 52px;
+  font-family: $textFonts;
+  font-size: 0.75rem;
+}
+
+.menuIcon{
+  display: flex;
+  align-items: center;
+  width: max-content;
+  img{
+    padding-top: 5px  ;
+    width: 30px;
+  }
+}
+
+.cinecoIcon{
+  margin-left: 1.5rem;
+  max-width: 180px;
+  img{
+    width: 100%;
+    padding: 0 1.5rem 0 1rem;
+    
+  }
+}
+
+
+
+.nav-tab{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1rem 0 3rem;
+  button{
+    background-color: $primaryColorButton;
+    color: white;
+    border-radius: 1.5em;
+  }
+}
+
+.item:hover{
+  background-color: #0076ff;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+}
+
+input{
+  max-width: 135px;
+  padding: 0.6rem 1.375rem;
+  background-color: #dbe2f1;
+  color: $primaryColorButton;
+  border-radius: 1.5rem 0 0 1.5rem;
+  border:0;
+}
+
+.column{
+  width: max-content;
+}
+
+.lupaButton{
+  height: 34.52px;
+  width: 33px;
+  border-radius: 0 1.5rem 1.5rem 0;
+  background-color: #dbe2f1;
+  border:0;
+  img{
+    width: 13px;
+  }
+}
+
+.nav-search{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: max-content;
+}
+
+.posDiv{
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+.posButton{
+  background-color: black;
+  color: white;
+  width: max-content;
+  padding: 12px 30px;
+}
+
+.posicion{
+  width: 15px;
+  position: absolute;
+}
+
+.item{
+  width: max-content;
+  p{
+    padding: 0.7rem 1.2rem;
+  }
+}
+      
+.origen{
+  padding-right: 8px;
+  color: white;
+}
+
+.userLogin{
+  width: max-content;
+}
+
+.userButton{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: black;
+}
+
+.img-user{
+  width: 12px;
+  height: 12px;
+  margin-left: 2.3px;
+}
+
+.img-arrow{
+  width: 11px;
+  height: 11px;
+}
+
+.spanUser{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 22px;
+  height: 2.2rem;
+  width: 2.2rem;
+  border-radius: 50%;
+  background-color: #06162f;
+  border: 6px solid #1c508d;
+}
+
+.spanArrow{
+  display: flex;
+  position: absolute;
+  border-radius: 40% 0 0 40%;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.35rem;
+  background-color: $primaryColorButton;
+}
+
+.userButton:hover{
+  .spanArrow{
+    background-color: #0076ff;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+  }
+  .spanUser{
+    border-color: #0076ff;
+  }
+}
+
+#id-1{
+  z-index: -1;
+}
+
+#id-2{
+  z-index: 1;
+}
+
+.posDiv:hover{
+  #id-1{
+    z-index: 1;
+  }
+  
+  #id-2{
+    z-index:-1;
+  }
+}
