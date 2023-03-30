@@ -1,11 +1,15 @@
-function CardPremiereFilm(
+/* eslint-disable react/prop-types */
+
+import "./cards.style.scss"
+
+function CardPremiereFilm({
   imagen,
   title,
   estreno,
   genero,
   edadRecomendada,
-  duracion
-) {
+  duracion,
+}) {
   return (
     <div className="cardsContainer">
       <div className="card">
@@ -13,9 +17,9 @@ function CardPremiereFilm(
           <img src={imagen} alt={title} />
         </div>
         <div className="infoContainer">
-          <h1>{title}</h1>
-          <span>Estreno: {estreno}</span>
-          <span>Género: {genero}</span>
+          <h1 className="title">{title}</h1>
+          <span className="premiere">Estreno: {estreno}</span>
+          <span className="gener">Género: {genero}</span>
           <div className="detailsContainer">
             <span className="details">
               Recomendada para Mayores de {edadRecomendada} años

@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import FilmPremiere from "../components/Body/EnCartelera/FilmPremiere"
 import { ErrorPage, Home } from "../pages"
 
 const routerconfig = createBrowserRouter([
@@ -10,6 +11,10 @@ const routerconfig = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/Cartelera",
+    element: <FilmPremiere />,
   },
 ])
 

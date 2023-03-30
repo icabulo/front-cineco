@@ -1,7 +1,16 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react"
 import Carousel from "react-multi-carousel"
+import { getMoviesByType, movieType } from "../../services/movies"
 import { CardPremiereFilm } from "../GeneralComponents/Cards"
 
 function Slider() {
+  const [movieArray, setMovieArray] = useState(null)
+  useEffect(() => {
+    getMoviesByType(movieType.filmPremiere).then((data) => setMovieArray(data))
+  }, [getMoviesByType])
+
   return (
     <div>
       <Carousel
@@ -58,102 +67,18 @@ function Slider() {
         slidesToSlide={2}
         swipeable
       >
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
-        <CardPremiereFilm
-          imagen=""
-          title=""
-          estreno=""
-          genero=""
-          edadRecomendada=""
-          duracion=""
-        />
+        {movieArray !== null &&
+          movieArray.map((movieInfo) => (
+            <CardPremiereFilm
+              duracion={movieInfo.duracion}
+              edadRecomendada={movieInfo.edadRecomendada}
+              estreno={movieInfo.estreno}
+              genero={movieInfo.genero}
+              imagen={movieInfo.imagen}
+              title={movieInfo.title}
+              key={movieInfo.id}
+            />
+          ))}
       </Carousel>
     </div>
   )
