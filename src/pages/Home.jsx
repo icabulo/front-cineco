@@ -3,6 +3,7 @@ import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { PromoSlider } from "../components/PromoSlider"
 import { LandingBanner } from "../components/LandingBanner"
+import { CinecoAlternativo } from "../components/CinecoAlternativo"
 
 function Home() {
   // landing banner initialization
@@ -18,6 +19,7 @@ function Home() {
         url={landingUrl}
       />
       <Header />
+      <CinecoAlternativo />
       <PromoSlider />
       <Footer />
     </>
