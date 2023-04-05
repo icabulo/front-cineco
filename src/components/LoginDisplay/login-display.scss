@@ -1,0 +1,145 @@
+.close-button {
+  margin: 0;
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  background-color: #1c508d;
+  color: white;
+  padding: 0.8em;
+  border: 1px solid white;
+  border-radius: 10em;
+  width: 15px;
+  height: 15px;
+  font-weight: bold;
+  font-size: 0.8em;
+  //   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.login__modal-background {
+  background-color: rgb(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  h2,
+  a,
+  p {
+    text-align: center;
+  }
+
+  p {
+    color: #79abdf;
+    cursor: auto;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+
+    // border: 1px solid yellow;
+  }
+
+  .login__container {
+    max-width: 350px;
+    min-height: 400px;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    display: grid;
+    grid-template-rows: 25% auto 1fr;
+    background-color: rgb(28, 80, 141);
+    border-radius: 1em;
+
+    // border: 1px solid red;
+
+    .top {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      //   border: 1px solid white;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      color: white;
+
+      //   border: 1px solid limegreen;
+    }
+
+    .login-form {
+      padding: 1em;
+      display: grid;
+      border-radius: 0.5em;
+      background-color: rgb(255, 255, 255);
+
+      //   border: 1px solid blue;
+
+      .login-btn {
+        width: auto;
+        margin: 0 auto;
+        padding: 0.5em 1.2em;
+        border-radius: 5em;
+        border: none;
+        margin-bottom: 1em;
+        background-color: rgb(28, 80, 141);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .login-btn:hover {
+        background-color: rgb(0, 118, 255);
+      }
+
+      /* .login-btn:focus {
+        outline: none;
+      }
+
+      .login-btn:active {
+        box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+      } */
+
+      a {
+        color: rgb(28, 80, 141);
+      }
+    }
+
+    .input-group {
+      label {
+        display: block;
+        margin-bottom: 0.8em;
+        span {
+          color: red;
+        }
+      }
+      input {
+        display: block;
+        width: 100%;
+        padding: 0.8em 1.5em;
+        border-radius: 0.8em;
+        background-color: rgb(219, 226, 241);
+        color: #1c508d;
+        border: none;
+        margin-bottom: 0.8em;
+      }
+    }
+  }
+}

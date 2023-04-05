@@ -1,5 +1,9 @@
-import React, { useState } from "react"
+/* eslint-disable react/button-has-type */
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { openModal } from "../../context/features/modal/modalSlice"
 import { SidebarMenu } from "./SidebarMenu"
+import LoginDisplay from "../LoginDisplay/LoginDisplay"
 
 import "./header.scss"
 
@@ -12,18 +16,24 @@ import arrow from "../../icons/down-arrow.png"
 import user from "../../icons/user.png"
 
 function Header() {
-  // variable para verificar si el sidebar menu esta abierto
-  const [sideBarIsOpen, setSideBarIsOpen] = useState(false)
+  // variable global verificar si el sidebar menu esta abierto
+  const { modalIsOpen } = useSelector((store) => store.modal)
+  const dispatch = useDispatch()
 
+  const modalClick = (modal) => {
+    if (modal === "sideMenuModal") {
+      dispatch(openModal(modal))
+    } else if (modal === "loginModal") {
+      dispatch(openModal(modal))
+    }
+  }
   return (
     <header className="header">
       <div className="header-top">
-        <SidebarMenu
-          open={sideBarIsOpen}
-          close={() => setSideBarIsOpen(false)}
-        />
+        {modalIsOpen.sideMenuModal && <SidebarMenu />}
+        {modalIsOpen.loginModal && <LoginDisplay />}
 
-        <div className="menuIcon" onClick={() => setSideBarIsOpen(true)}>
+        <div className="menuIcon" onClick={() => modalClick("sideMenuModal")}>
           <img src={menu} alt="123" />
         </div>
 
@@ -72,7 +82,10 @@ function Header() {
         </div>
 
         <div className="userLogin">
-          <button className="userButton">
+          <button
+            className="userButton"
+            onClick={() => modalClick("loginModal")}
+          >
             <span className="spanArrow">
               <img src={arrow} alt="678" className="img-arrow" />
             </span>
