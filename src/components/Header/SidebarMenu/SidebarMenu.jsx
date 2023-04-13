@@ -1,20 +1,26 @@
 import React, { useState } from "react"
 import "./sidebar-menu.scss"
+import { useDispatch } from "react-redux"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp"
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft"
+import { closeModal } from "../../../context/features/modal/modalSlice"
 import cinecoLogo from "../../../icons/logo_cineco.svg"
 /* pendientes:
 1. animaciones de iconos y cierre del sidebar
 3. links de cada seccion. NOTA: por ahora estan con etiqueta <p>
 */
 
-function SidebarMenu({ open, close }) {
-  if (!open) return null
+function SidebarMenu() {
+  // if (!open) return null
   const [accordionActive, setAccordionActive] = useState(false)
+  const dispatch = useDispatch()
   return (
     <>
-      <div className="background-overlay" onClick={close} />
+      <div
+        className="background-overlay"
+        onClick={() => dispatch(closeModal("sideMenuModal"))}
+      />
       <nav className="sidebar">
         <div className="top-section">
           <div className="image-container">
@@ -24,7 +30,10 @@ function SidebarMenu({ open, close }) {
               className="cineco-image"
             />
           </div>
-          <nav className="return-icon" onClick={close}>
+          <nav
+            className="return-icon"
+            onClick={() => dispatch(closeModal("sideMenuModal"))}
+          >
             <KeyboardArrowLeftIcon />
           </nav>
         </div>
