@@ -1,8 +1,8 @@
 import React from "react"
-import { CinecoAlternativo } from "../components/CinecoAlternativo"
+import { TheatreCard } from "../components/TheatreCard"
 
 function TestCineco() {
-  return <CinecoAlternativo />
+  return <TheatreCard />
 }
 
 export default TestCineco
