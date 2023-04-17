@@ -9,7 +9,7 @@ import {
   OperaImageList,
   balletImageList,
   teatroImageList,
-} from "./MockData/mockData"
+} from "../../mockData/Alternativo/mockData"
 
 function CinecoAlternativo() {
   const navigate = useNavigate()
