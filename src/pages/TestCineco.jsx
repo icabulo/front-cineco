@@ -1,8 +1,12 @@
 import React from "react"
-import { CinecoAlternativo } from "../components/CinecoAlternativo"
+import { TheatreList } from "../components/TheatreList"
 
 function TestCineco() {
-  return <CinecoAlternativo />
+  return (
+    <div className="div-wrapper">
+      <TheatreList />
+    </div>
+  )
 }
 
 export default TestCineco

@@ -1,0 +1,11 @@
+.theatre {
+  padding-top: 1rem;
+  &__title {
+    color: purple;
+  }
+  // rooms is a container for the showrooms array
+  &__rooms {
+    // border: 1px solid brown;
+    margin-left: 1rem;
+  }
+}
