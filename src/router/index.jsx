@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { ErrorPage, Home } from "../pages"
+import { ErrorPage, Home, SelectedFilm } from "../pages"
 import InProgress from "../pages/InProgress"
 import TestCienco from "../pages/TestCineco"
 
@@ -12,6 +12,10 @@ const routerconfig = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/bogota/peliculas/:title",
+    element: <SelectedFilm />,
   },
   {
     path: "/construccion",

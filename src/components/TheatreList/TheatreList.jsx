@@ -1,16 +1,22 @@
 import "./theatre-list.scss"
+import { useSelector } from "react-redux"
 import { TheatreCard } from "../TheatreCard"
-import theatresAgenda from "../../mockData/Theatre/mockData"
+import theatresForFilm from "../../mockData/Theatre/mockData"
 
 function TheatreList() {
-  // theatresAgenda is hardcoded-mocked-data imported
-  const showTheaters = theatresAgenda.map((theater) => (
+  const { currentFilm } = useSelector((store) => store.selectFilm)
+  const getTheatreObj = theatresForFilm.find(
+    (item) => item.filmId === currentFilm
+  )
+  const currentList = getTheatreObj.theatres
+
+  const showTheatres = currentList.map((theater) => (
     <TheatreCard
-      theaterName={theater.name}
-      key={theater.idTheater}
-      id={theater.idTheater}
+      theatreName={theater.name}
+      key={theater.idTheatre}
+      id={theater.idTheatre}
     />
   ))
-  return <div className="theatre-list">{showTheaters}</div>
+  return <div className="theatre-list">{showTheatres}</div>
 }
 export default TheatreList

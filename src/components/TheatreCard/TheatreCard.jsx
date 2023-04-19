@@ -1,12 +1,17 @@
 import "./theatre-card.scss"
 import { nanoid } from "@reduxjs/toolkit"
+import { useSelector } from "react-redux"
 import { Room } from "./Room"
-import theatresAgenda from "../../mockData/Theatre/mockData"
+import theatresForFilm from "../../mockData/Theatre/mockData"
 
-function TheatreCard({ theaterName, id }) {
-  const currentTheater = theatresAgenda.find(
-    (theater) => theater.idTheater === id
+function TheatreCard({ theatreName, id }) {
+  const { currentFilm } = useSelector((store) => store.selectFilm)
+  const getTheatreObj = theatresForFilm.find(
+    (item) => item.filmId === currentFilm
   )
+  const currentList = getTheatreObj.theatres
+
+  const currentTheater = currentList.find((theater) => theater.idTheatre === id)
 
   // current theatre has rooms.
   // rooms is an array of objects
@@ -17,7 +22,7 @@ function TheatreCard({ theaterName, id }) {
   ))
   return (
     <section className="theatre">
-      <h2 className="theatre__title">{theaterName}</h2>
+      <h2 className="theatre__title">{theatreName}</h2>
       <div className="theatre__rooms">{showRooms}</div>
     </section>
   )

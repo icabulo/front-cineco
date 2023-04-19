@@ -73,7 +73,7 @@ function Header() {
 
         <div className="posButton">
           <div className="posDiv">
-            <span className="origen">Medellín</span>
+            <span className="origen">Bogota</span>
             <div>
               <img src={pos2} alt="567-1" className="posicion" id="id-1" />
               <img src={pos} alt="567" className="posicion" id="id-2" />
