@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer"
 import { PromoSlider } from "../components/PromoSlider"
 import { LandingBanner } from "../components/LandingBanner"
 import { CinecoAlternativo } from "../components/CinecoAlternativo"
+import { HomeBody } from "../components/HomeBody"
 
 function Home() {
   const { modalIsOpen } = useSelector((store) => store.modal)
@@ -15,6 +16,7 @@ function Home() {
     <>
       {modalIsOpen.landingModal && <LandingBanner url={landingUrl} />}
       <Header />
+      <HomeBody />
       <CinecoAlternativo />
       <PromoSlider />
       <Footer />
