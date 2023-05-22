@@ -1,10 +1,13 @@
 import React from "react"
-import { TheatreList } from "../components/TheatreList"
+
+import { CinemaDashboard } from "../components/Dasboards/CinemaDashboard"
+import { DeleteCinema } from "../components/Forms/DeleteCinema"
 
 function TestCineco() {
   return (
     <div className="div-wrapper">
-      <TheatreList />
+      <CinemaDashboard />
+      <DeleteCinema />
     </div>
   )
 }
