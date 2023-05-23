@@ -20,3 +20,23 @@ export const fetchCinemas = async (token) => {
     })
   }
 }
+
+export const filterFromUser = async (token, id) => {
+  try {
+    const request = await fetch(`${apiUrl}/api/cinema/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    const data = await request.json()
+    return new Promise((resolve, reject) => {
+      resolve(data)
+    })
+  } catch (error) {
+    return new Promise((resolve, reject) => {
+      reject(error)
+    })
+  }
+}

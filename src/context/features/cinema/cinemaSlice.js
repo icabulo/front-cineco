@@ -1,16 +1,26 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
-import { fetchCinemas } from "./services/cinemaAPI"
+import { fetchCinemas, filterFromUser } from "./services/cinemaAPI"
 
 const initialState = {
   cinemaList: [],
   isLoading: true,
+  fiteredList: [],
+  isFiltering: false,
 }
 
 export const getCinemasAsync = createAsyncThunk(
   "cinema/getAllCinemas",
   async () => {
     const data = await fetchCinemas("mocked-token")
+    return data
+  }
+)
+
+export const filterCinemaAsync = createAsyncThunk(
+  "cinema/fiterOneCinema",
+  async (id) => {
+    const data = await filterFromUser("mocked-token", id)
     return data
   }
 )
@@ -32,6 +42,16 @@ const cinemaSlice = createSlice({
         const result = action.payload
         state.isLoading = false
         state.cinemaList = result
+      })
+      .addCase(filterCinemaAsync.pending, (state) => {
+        state.isFiltering = false
+      })
+      .addCase(filterCinemaAsync.fulfilled, (state, action) => {
+        const result = action.payload
+        state.isFiltering = true
+        if (result.length > 0) {
+          state.cinemaList = result
+        }
       })
   },
 })

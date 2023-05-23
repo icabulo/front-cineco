@@ -1,6 +1,5 @@
 .cinema-dashboard {
-  // display: flex;
-  p {
-    color: black;
+  &__row {
+    margin-block: 0.5rem;
   }
 }
