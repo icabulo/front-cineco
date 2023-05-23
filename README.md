@@ -12,3 +12,9 @@
     - ver archivo de configuracion ".eslintrc.json"
     - se tienen dos script de soporte: "lint": "eslint .", "lint-fix": "eslint . --fix"
   - prettier-eslint: npm install --save-dev prettier-eslint
+
+## branch feature-backend-connect
+
+- dashboard for cinema CRUD operation:
+  - allow a user to modify the cinema table on the database.
+- cinema slice created for handling cinema state.

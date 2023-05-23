@@ -1,21 +1,19 @@
 /* eslint-disable object-curly-newline */
-// redux
-import { useDispatch } from "react-redux"
 
+// ant design
 import { Button, Popconfirm, message } from "antd"
 import { DeleteOutlined, ExclamationCircleOutlined } from "@ant-design/icons"
+// redux
+import { useDispatch } from "react-redux"
 import { getCinemasAsync } from "../../../context/features/cinema/cinemaSlice"
 import { apiUrl } from "../../../backendUrl/base-url"
 
 function DeleteCinema({ id, textName = "this cinema" }) {
   const dispatch = useDispatch()
-  const handleOpen = () => {
-    console.log("delete open", id, textName)
-  }
+  const handleOpen = () => {}
 
   // eslint-disable-next-line consistent-return
   const deleteRequest = async (idCinema, token) => {
-    console.log("Inside the delete request")
     try {
       const request = await fetch(`${apiUrl}/api/cinema/${idCinema}`, {
         method: "DELETE",
@@ -25,19 +23,17 @@ function DeleteCinema({ id, textName = "this cinema" }) {
         },
       })
       const data = await request.json()
-      console.log("DELETE cinema", data)
       if (data.name) {
         dispatch(getCinemasAsync())
       }
       return !!data.name
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error)
     }
   }
 
-  const confirm = async (e) => {
-    console.log(e)
-
+  const confirm = async () => {
     const validation = await deleteRequest(id, "mockToken")
     if (validation) {
       message.success("Cinema removed")

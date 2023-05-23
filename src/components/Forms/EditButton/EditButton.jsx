@@ -33,11 +33,11 @@ function EditButton({ id, textName }) {
         body: JSON.stringify(body),
       })
       const data = await request.json()
-      console.log("UPDATE cinema", data)
       if (data.name) {
         dispatch(getCinemasAsync())
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error)
     }
   }
@@ -45,7 +45,6 @@ function EditButton({ id, textName }) {
   const [form] = Form.useForm()
 
   const onFinish = async (values) => {
-    console.log("New name", values, id)
     await updateCinema(values, id, "mockToken")
     // setIsModalOpen(false)
 
