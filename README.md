@@ -18,3 +18,9 @@
 - dashboard for cinema CRUD operation:
   - allow a user to modify the cinema table on the database.
 - cinema slice created for handling cinema state.
+
+## Create a form for cinema room detail.
+
+- format can be: 2d or 3d
+- languaje: Doblado or Subtitulado
+- type: dinamix, onyx, megasala, imax
