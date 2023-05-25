@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable object-curly-newline */
 /* eslint-disable max-len */
 import { Button, Form, Select } from "antd"
@@ -54,7 +55,5 @@ function CinemaDetails() {
     </Form>
   )
 }
-// export default function () {
-//   return <CinemaDetails />
-// }
+
 export default CinemaDetails

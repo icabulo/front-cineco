@@ -316,11 +316,11 @@ const theatresAgenda4 = [
 
 const theatresForFilm = [
   {
-    filmId: 0,
+    filmId: 1,
     theatres: theatresAgenda1,
   },
   {
-    filmId: 1,
+    filmId: 2,
     theatres: theatresAgenda2,
   },
   {
@@ -330,6 +330,10 @@ const theatresForFilm = [
   {
     filmId: 4,
     theatres: theatresAgenda4,
+  },
+  {
+    filmId: 6,
+    theatres: theatresAgenda1,
   },
 ]
 
